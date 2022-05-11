@@ -24,7 +24,7 @@ model User {
 
   name String
   email        String @unique
-  subscription String
+  accountType String
   createdAt DateTime @default(now())
 
   passwordSalt String @unique
