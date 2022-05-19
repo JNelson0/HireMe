@@ -173,6 +173,13 @@ export default function LoginPage() {
                     <button className="ui button" onClick={resetForm}>
                         Clear
                     </button>
+                    <Link
+                        to="/login"
+                        className="ui blue basic button"
+                        id="register"
+                    >
+                        Already have an account?
+                    </Link>
                 </div>
             </form>
         </div>
