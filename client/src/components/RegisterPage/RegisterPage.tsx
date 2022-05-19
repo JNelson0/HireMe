@@ -46,27 +46,32 @@ export default function LoginPage() {
             password: "",
             confirmPassword: "",
         };
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
         if (!formValues.firstname) {
-            errors.firstname = "First name required!";
+            errors.firstname = "First name required";
         }
         if (!formValues.lastname) {
             errors.lastname = "Last name required!";
         }
+
+        let regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if (!formValues.email) {
             errors.email = "Email required!";
         } else if (!regex.test(formValues.email)) {
-            errors.email = "Email must be format example@email.com ";
+            errors.email = "Email must be format example@email.com";
         }
+        regex = /^(?=.*[!-+])(?=.*[a-z])(?=.*[A-Z]).{8,}$/i;
         if (!formValues.password) {
             errors.password = "Password required!";
+        } else if (!regex.test(formValues.password)) {
+            errors.password =
+                "Password must be at least 8 characters and include one uppercase letter and one special character";
         }
         if (
             !formValues.confirmPassword ||
             formValues.password !== formValues.confirmPassword
         ) {
-            errors.confirmPassword = "Passwords don't match!";
+            errors.confirmPassword = "Passwords don't match";
         }
 
         return errors;
