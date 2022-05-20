@@ -85,7 +85,7 @@ export default function LoginPage() {
                     <div className="field">
                         <label className="ui label">Password</label>
                         <input
-                            type="text"
+                            type="password"
                             name="password"
                             placeholder="Password"
                             onChange={handleChange}
